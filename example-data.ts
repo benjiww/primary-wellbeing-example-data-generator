@@ -133,3 +133,5 @@ app.get('/getExampleData', (request: any, response: any) => {
 
     response.send(generateExampleData(userCount, biasArray));
 })
+
+// tsc main.ts && node main.js
