@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!node_modules
+!example-data.ts
+!example-data.js
+!package-lock.json
+!package.json
+# etc...
