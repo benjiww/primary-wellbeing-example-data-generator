@@ -35,11 +35,19 @@ const getRandomIntInclusive = ( min: number, max: number ): number => {
 
 const returnBiasScore = ( originalScore: number, bias: number): number => {
 
-    let random = 1 - Math.sqrt(1 - Math.random());
+    let random = Math.floor(Math.abs(Math.random() - Math.random()) * (1 + 4 - 0) + 0);
 
-    (Math.random()) ? random = random : random = random * 1
+    (Math.round(Math.random())) ? random = random : random = random * -1
 
-    let biasOriginal: number = Math.round((originalScore + random) * bias);
+    console.log(' ')
+
+    console.log(originalScore)
+    console.log(random)
+
+    let biasOriginal: number = Math.round((originalScore * bias) + random);
+    console.log(biasOriginal)
+
+    console.log(' ')
 
     if (biasOriginal >= 8) {
 

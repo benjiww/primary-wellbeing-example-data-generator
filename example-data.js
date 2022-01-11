@@ -18,9 +18,14 @@ var getRandomIntInclusive = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 var returnBiasScore = function (originalScore, bias) {
-    var random = 1 - Math.sqrt(1 - Math.random());
-    (Math.random()) ? random = random : random = random * 1;
-    var biasOriginal = Math.round((originalScore + random) * bias);
+    var random = Math.floor(Math.abs(Math.random() - Math.random()) * (1 + 4 - 0) + 0);
+    (Math.round(Math.random())) ? random = random : random = random * -1;
+    console.log(' ');
+    console.log(originalScore);
+    console.log(random);
+    var biasOriginal = Math.round((originalScore * bias) + random);
+    console.log(biasOriginal);
+    console.log(' ');
     if (biasOriginal >= 8) {
         return 8;
     }
@@ -71,3 +76,4 @@ app.get('/getExampleData', function (request, response) {
     var biasArray = request.query.biasArray.split('-').map(function (x) { return JSON.parse(x); });
     response.send(generateExampleData(userCount, biasArray));
 });
+// tsc main.ts && node main.js
